@@ -1,0 +1,34 @@
+<!-- 
+http://stackoverflow.com/questions/16824853/way-to-ng-repeat-defined-number-of-times-instead-of-repeating-over-array
+
+https://docs.angularjs.org/error/ngRepeat/dupes?p0=k%20in%20getNumber(x)&p1=undefined:undefined&p2=undefined
+
+http://stackoverflow.com/questions/15256600/passing-2-index-values-within-nested-ng-repeat 
+
+https://github.com/angular/angular.js/issues/1019 -->
+<!-- http://stackoverflow.com/questions/17892220/angularjs-and-select-default-selected-options-are-removed -->
+
+<div class="row">
+    <table class="text-center">
+      <tr ng-repeat="j in getNumber(MatrixCtrl.matrixDimension) track by $index">
+        <td ng-repeat="k in getNumber(MatrixCtrl.matrixDimension) track by $index">
+          <select ng-model="MatrixCtrl.matrixDataA[$parent.$index][$index]" id="matrixDataA{{$parent.$index}}-{{$index}}">
+            <option ng-repeat="m in getNumber(MatrixCtrl.matrixRange+1) track by $index" value="{{$index}}" >{{$index}}</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <br/>
+    <table>
+      <tr ng-repeat="j in getNumber(MatrixCtrl.matrixDimension) track by $index">
+        <td ng-repeat="k in getNumber(MatrixCtrl.matrixDimension) track by $index">
+          <select ng-model="MatrixCtrl.matrixDataB[$parent.$index][$index]" id="matrixDataB{{$parent.$index}}-{{$index}}">
+            <option ng-repeat="m in getNumber(MatrixCtrl.matrixRange+1) track by $index" value="{{$index}}"  >{{$index}}</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <br/>
+  <button ng-click="MatrixCtrl.calculate()" class="btn btn-primary">Calculate</button>
+</div>
+

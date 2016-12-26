@@ -1,0 +1,31 @@
+<div class="row">
+    <h1>Result:</h1>
+    <table class="table table-bordered">
+      <tr ng-repeat="j in getNumber(PopUpCtrl.matrixDimension) track by $index">
+        <td ng-repeat="k in getNumber(PopUpCtrl.matrixDimension) track by $index">
+        {{PopUpCtrl.matrixDataA[$parent.$index][$index]}}      
+        </td>
+      </tr>
+    </table>
+
+    <p>{{actionSymbol(action)}}</p>
+
+    <table class="table table-bordered">
+      <tr ng-repeat="j in getNumber(PopUpCtrl.matrixDimension) track by $index">
+        <td ng-repeat="k in getNumber(PopUpCtrl.matrixDimension) track by $index">
+        {{PopUpCtrl.matrixDataB[$parent.$index][$index]}}      
+        </td>
+      </tr>
+    </table>
+
+    <p>=</p>
+
+    <table class="table table-bordered">
+      <tr ng-repeat="j in getNumber(PopUpCtrl.matrixDimension) track by $index">
+        <td ng-repeat="k in getNumber(PopUpCtrl.matrixDimension) track by $index">
+        {{PopUpCtrl.matrixDataC[$parent.$index][$index]}}      
+        </td>
+      </tr>
+    </table>
+</div>
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MatrixCalculatorApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>MatrixCalculator</title>
+	
+	<!--css-->
+	<link href="css/style.css" rel="stylesheet" type="text/css"/>
+
+	<!--Frameworks-->
+	<!--Bootstrap-->
+	<link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/> 
+	<!--JQuery-->
+	<script src="vendors/jquery/jquery-3.1.1.min.js" type="text/javascript" xml:space="preserve"></script>
+	<!--Angular-->
+	<script src="vendors/angular/angular.min.js" type="text/javascript" xml:space="preserve"></script>
+	<!--Angular-Bootstrap-->
+	<script src="vendors/bootstrap/js/ui-bootstrap-tpls-2.3.1.min.js" type="text/javascript" xml:space="preserve"></script>
+	<!-- https://angular-ui.github.io/bootstrap/ -->
+	<!-- app -->
+	<script src="js/controller/index.js" type="text/javascript" xml:space="preserve"></script>
+</head>
+<body>
+
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">MatrixCalculator</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+		<div id="main" ng-controller="MatrixController as MatrixCtrl">
+			<div class="jumbotron">
+				<h1>MatrixCalculator</h1>
+				<h2>Choose your operation and get amazed by our tricks!</h2>
+			</div>
+
+			<div id="operations">
+				<a ng-click="action='add'" href="#" id="add" class="btn {{action=='add' ? 'btn-primary' : 'btn-default'}}">Add</a>
+			    <a ng-click="action='substract'" href="#" id="substract" class="btn {{action=='substract' ? 'btn-primary' : 'btn-default'}}">Substraction</a>
+			    <a ng-click="action='multiply'" href="#" id="multiply" class="btn {{action=='multiply' ? 'btn-primary' : 'btn-default'}}">Multiply</a>
+			</div> 
+			<br/>
+			<operation-view-form></operation-view-form>
+			<matrix-view-form></matrix-view-form>
+		</div>
+
+		<footer>
+			<br/><p>© 2016 DAW-M06, Institut Provençana.</p>
+		</footer>
+    </div><!-- /.container -->
+
+</body>
+</html>
+
+
+
+   
