@@ -46,7 +46,7 @@ $(document).ready(function () {
     }
 
     this.initializeMatrix = function () {
-      if (!isNaN(this.matrixDimension)) {
+      if (this.validDimension()) {
         this.matrixDataA = [];
         this.matrixDataB = [];
         this.matrixDataC = [];
@@ -63,14 +63,14 @@ $(document).ready(function () {
       }
     };
 
-    // This function updates the value of the matrix in accordande to the matrixRange
+    // This function updates the value of the matrix in accordance to the matrixRange
     this.updateRanges = function () {
 
-      if (!isNaN(this.matrixDimension)) {
+      if (this.validDimension()) {
         for (var i = 0; i < this.matrixDimension; i++) {
           for (var j = 0; j < this.matrixDimension; j++) {
             // If a valid change
-            if (!isNaN(this.matrixRange)  && this.matrixRange != "") {
+            if (this.validRange()) {
               if (parseInt(this.matrixDataA[i][j])>this.matrixRange) {
                   this.matrixDataA[i][j] = '' + this.matrixRange;          
               }
@@ -103,7 +103,7 @@ $(document).ready(function () {
 
      this.calculate = function () {
        // !isNaN(this.matrixRange) <-- The range is atleast 0
-        if (!isNaN(this.matrixDimension)) {
+        if (this.validDimension()) {
           // A + B  = C
           if ($scope.action == "add") {
             this.calculateAdd();
