@@ -16,12 +16,19 @@ The windows comunicate via $window object sharing data via angular.
 # AngularJS Tags
 
   ng-app
+
   ng-change
+
   ng-class
+
   ng-click
+
   ng-controller
+
   ng-model
+
   ng-repeat
+  
   ng-show
 
 
