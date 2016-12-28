@@ -39,23 +39,22 @@
       </div>
     </nav>
 
-    <div class="container">
-
-		<div id="main" ng-controller="MatrixController as MatrixCtrl">
-			<div class="jumbotron">
-				<h1>MatrixCalculator</h1>
-				<h2>Choose your operation and get amazed by our tricks!</h2>
-			</div>
-
-			<div id="operations">
-				<a ng-click="action='add'" href="#" id="add" class="btn {{action=='add' ? 'btn-primary' : 'btn-default'}}">Add</a>
-			    <a ng-click="action='substract'" href="#" id="substract" class="btn {{action=='substract' ? 'btn-primary' : 'btn-default'}}">Substraction</a>
-			    <a ng-click="action='multiply'" href="#" id="multiply" class="btn {{action=='multiply' ? 'btn-primary' : 'btn-default'}}">Multiply</a>
-			</div> 
-			<br/>
-			<operation-view-form></operation-view-form>
-			<matrix-view-form></matrix-view-form>
+	<div class="jumbotron">
+		<div class="container">
+			<h1>MatrixCalculator</h1>
+			<h2>Choose your operation and get amazed by our tricks!</h2>
 		</div>
+	</div>
+
+    <div class="container" id="matrix-calculator-ctrl" ng-controller="MatrixController as MatrixCtrl">
+		<div id="operations">
+			<a ng-click="action='add'" href="#" id="add" class="btn {{action=='add' ? 'btn-primary' : 'btn-default'}}">Add</a>
+		    <a ng-click="action='substract'" href="#" id="substract" class="btn {{action=='substract' ? 'btn-primary' : 'btn-default'}}">Substraction</a>
+		    <a ng-click="action='multiply'" href="#" id="multiply" class="btn {{action=='multiply' ? 'btn-primary' : 'btn-default'}}">Multiply</a>
+		</div> 
+		<br/>
+		<operation-view-form></operation-view-form>
+		<matrix-view-form></matrix-view-form>
 
 		<footer>
 			<br/><p>© 2016 DAW-M06, Institut Provençana.</p>

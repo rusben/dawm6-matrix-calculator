@@ -8,8 +8,8 @@ http://stackoverflow.com/questions/15256600/passing-2-index-values-within-nested
 https://github.com/angular/angular.js/issues/1019 -->
 <!-- http://stackoverflow.com/questions/17892220/angularjs-and-select-default-selected-options-are-removed -->
 
-<div class="row">
-    <table class="text-center">
+<div class="row center-block" ng-show="MatrixCtrl.validDimension() && MatrixCtrl.validRange()">
+    <table>
       <tr ng-repeat="j in getNumber(MatrixCtrl.matrixDimension) track by $index">
         <td ng-repeat="k in getNumber(MatrixCtrl.matrixDimension) track by $index">
           <select ng-model="MatrixCtrl.matrixDataA[$parent.$index][$index]" id="matrixDataA{{$parent.$index}}-{{$index}}">
@@ -29,6 +29,6 @@ https://github.com/angular/angular.js/issues/1019 -->
       </tr>
     </table>
     <br/>
-  <button ng-click="MatrixCtrl.calculate()" class="btn btn-primary">Calculate</button>
 </div>
+<button ng-click="MatrixCtrl.calculate()" class="btn btn-primary pull-right">Calculate</button>
 

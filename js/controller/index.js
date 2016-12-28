@@ -21,15 +21,13 @@ $(document).ready(function () {
     // Initial values
     $scope.action = "add";
 
-    this.invalidDimension = function ($scope) {
-      return isNaN(this.matrixDimension);
+    this.validDimension = function () {
+      return (!isNaN(this.matrixDimension) && this.matrixDimension >= 3 && this.matrixDimension % 1 === 0);
     };
     
-
-    this.invalidRange = function ($scope) {
-      return isNaN(this.matrixRange);
+    this.validRange = function () {
+      return (!isNaN(this.matrixRange) && this.matrixRange >= 0 && this.matrixRange % 1 === 0);
     };
-
 
     /* http://stackoverflow.com/questions/35218517/storing-the-data-in-array-using-ng-model */
     // Scope functions
@@ -46,7 +44,7 @@ $(document).ready(function () {
       return a;
     }
 
-    this.initializeFields = function () {
+    this.initializeMatrix = function () {
       if (!isNaN(this.matrixDimension)) {
         this.matrixDataA = [];
         this.matrixDataB = [];
@@ -70,7 +68,6 @@ $(document).ready(function () {
       if (!isNaN(this.matrixDimension)) {
         for (var i = 0; i < this.matrixDimension; i++) {
           for (var j = 0; j < this.matrixDimension; j++) {
-            
             // If a valid change
             if (!isNaN(this.matrixRange)) {
               if (parseInt(this.matrixDataA[i][j])>this.matrixRange) {
@@ -80,7 +77,6 @@ $(document).ready(function () {
                   this.matrixDataB[i][j] = '' + this.matrixRange;          
               }
             } else { // An invalid change
-
                 this.matrixDataA[i][j] = "0";          
                 this.matrixDataB[i][j] = "0";          
             }
@@ -93,12 +89,15 @@ $(document).ready(function () {
               http://stackoverflow.com/questions/23995765/using-window-opener-for-a-function-in-angularjs */
 
       this.popUp = function () {
-          var popupWindow = window.open('view/popup/popUpWindow.html');
-          popupWindow.matrixDataA = this.matrixDataA;
-          popupWindow.matrixDataB = this.matrixDataB;
-          popupWindow.matrixDataC = this.matrixDataC;
-          popupWindow.matrixDimension = this.matrixDimension;
-          popupWindow.action = $scope.action;
+          var popupWindow = window.open('view/popup/popup.html');
+          /*
+            // Injection
+            popupWindow.matrixDataA = this.matrixDataA;
+            popupWindow.matrixDataB = this.matrixDataB;
+            popupWindow.matrixDataC = this.matrixDataC;
+            popupWindow.matrixDimension = this.matrixDimension;
+            popupWindow.action = $scope.action;
+          */
       }
 
      this.calculate = function () {
@@ -154,7 +153,7 @@ $(document).ready(function () {
         // console.log(this.matrixDataC); 
      };
 
-     this.initializeFields();
+     this.initializeMatrix();
     
   });
 

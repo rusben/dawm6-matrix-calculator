@@ -2,15 +2,15 @@
   <p>Operation is <span>{{actionSymbol(action)}}</span></p>
  </blockquote>
 <form>
-  <div class="form-group" ng-class="{'has-error': MatrixCtrl.invalidDimension()}">
+  <div class="form-group" ng-class="{'has-error': !MatrixCtrl.validDimension()}">
     <label for="matrix-dimension">Matrix rows and cols number</label>
-    <input id="matrix-dimension" ng-change="MatrixCtrl.initializeFields()" ng-model="MatrixCtrl.matrixDimension"  class="form-control" type="number" min="3" value="{{MatrixCtrl.matrixDimension}}"  />
-    <span ng-show="MatrixCtrl.invalidDimension()" id="help-block-matrix-dimension" class="help-block has-error">Please, enter a valid number greater or equal to 3.</span>
+    <input id="matrix-dimension" ng-change="MatrixCtrl.initializeMatrix()" ng-model="MatrixCtrl.matrixDimension"  class="form-control" type="number" min="3" value="{{MatrixCtrl.matrixDimension}}"  />
+    <span ng-show="!MatrixCtrl.validDimension()" id="help-block-matrix-dimension" class="help-block has-error">Please, enter a valid number greater or equal to 3.</span>
   </div>
-  <div class="form-group" ng-class="{'has-error': MatrixCtrl.invalidRange()}">
+  <div class="form-group" ng-class="{'has-error': !MatrixCtrl.validRange()}">
     <label for="matrix-range">Range of possible values of each element of the matrix</label>
     <input id="matrix-range"  ng-change="MatrixCtrl.updateRanges()" ng-model="MatrixCtrl.matrixRange" class="form-control" type="number" min="0" value="{{MatrixCtrl.matrixRange}}"/>
-    <div ng-show="MatrixCtrl.invalidRange()" class="has-error">
+    <div ng-show="!MatrixCtrl.validRange()" class="has-error">
     <span id="help-block-matrix-range" class="help-block ">Please, enter a valid number greater or equal to 0.</span>
     </div>
   </div>
