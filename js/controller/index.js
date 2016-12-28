@@ -22,11 +22,12 @@ $(document).ready(function () {
     $scope.action = "add";
 
     this.validDimension = function () {
-      return (!isNaN(this.matrixDimension) && this.matrixDimension >= 3 && this.matrixDimension % 1 === 0);
+      return (!isNaN(this.matrixDimension) && this.matrixDimension >= 3 && this.matrixDimension % 1 === 0 && this.matrixDimension !== "");
     };
     
     this.validRange = function () {
-      return (!isNaN(this.matrixRange) && this.matrixRange >= 0 && this.matrixRange % 1 === 0);
+      
+      return (!isNaN(this.matrixRange) && this.matrixRange >= 0 && this.matrixRange % 1 === 0 && this.matrixRange !== "");
     };
 
     /* http://stackoverflow.com/questions/35218517/storing-the-data-in-array-using-ng-model */
@@ -69,7 +70,7 @@ $(document).ready(function () {
         for (var i = 0; i < this.matrixDimension; i++) {
           for (var j = 0; j < this.matrixDimension; j++) {
             // If a valid change
-            if (!isNaN(this.matrixRange)) {
+            if (!isNaN(this.matrixRange)  && this.matrixRange != "") {
               if (parseInt(this.matrixDataA[i][j])>this.matrixRange) {
                   this.matrixDataA[i][j] = '' + this.matrixRange;          
               }
