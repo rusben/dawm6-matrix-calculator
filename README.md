@@ -1,5 +1,8 @@
-# dawm6-matrix-calculator
-DAWM6 Matrix Calculator is a schoolar project to introduce angularjs framework.
+# dawm6-matrix-calculator-angularjs
+DAWM6 Matrix Calculator AngularJS is a schoolar project to introduce AngularJS framework.
+
+# Demo
+https://rusben.github.io/dawm6-matrix-calculator-angularjs/
 
 # The project
 
