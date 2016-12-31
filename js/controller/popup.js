@@ -6,10 +6,8 @@ $(document).ready(function () {
 // angularjs code
 /* (function(){ // write your code here })(); */
 (function(){
-  // This is the instance of our angular app
-  var app = angular.module("MatrixCalculatorPopUp", []);
-
-  app.controller("PopUpController", function($scope, $window) {
+  
+  angular.module('MatrixCalculatorApp').controller('PopUpController', ['$scope', '$window', function($scope, $window) {
     // Controller properties
     this.matrixDataA;
     this.matrixDataB;
@@ -52,9 +50,9 @@ $(document).ready(function () {
 
     this.initialize();
 
-  });
+  }]);
 
-    app.directive("matrixResultViewForm", function () {
+  angular.module('MatrixCalculatorApp').directive("matrixResultViewForm", function () {
     return {
       restrict: 'E', // type of directive
       templateUrl:"../../view/templates/matrix-result-view-form.html",

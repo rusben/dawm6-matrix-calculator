@@ -13,7 +13,7 @@ https://github.com/angular/angular.js/issues/1019 -->
       <tr ng-repeat="j in getNumber(MatrixCtrl.matrixDimension) track by $index">
         <td ng-repeat="k in getNumber(MatrixCtrl.matrixDimension) track by $index">
           <select ng-model="MatrixCtrl.matrixDataA[$parent.$index][$index]" id="matrixDataA{{$parent.$index}}-{{$index}}">
-            <option ng-repeat="m in getNumber(MatrixCtrl.matrixRange+1) track by $index" value="{{$index}}" >{{$index}}</option>
+            <option ng-repeat="m in getNumber(MatrixCtrl.matrixRange+1) track by $index" value="{{$index}}">{{$index}}</option>
           </select>
         </td>
       </tr>
@@ -23,7 +23,7 @@ https://github.com/angular/angular.js/issues/1019 -->
       <tr ng-repeat="j in getNumber(MatrixCtrl.matrixDimension) track by $index">
         <td ng-repeat="k in getNumber(MatrixCtrl.matrixDimension) track by $index">
           <select ng-model="MatrixCtrl.matrixDataB[$parent.$index][$index]" id="matrixDataB{{$parent.$index}}-{{$index}}">
-            <option ng-repeat="m in getNumber(MatrixCtrl.matrixRange+1) track by $index" value="{{$index}}"  >{{$index}}</option>
+            <option ng-repeat="m in getNumber(MatrixCtrl.matrixRange+1) track by $index" value="{{$index}}">{{$index}}</option>
           </select>
         </td>
       </tr>

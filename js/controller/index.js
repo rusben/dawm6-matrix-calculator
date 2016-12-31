@@ -6,10 +6,8 @@ $(document).ready(function () {
 // angularjs code
 /* (function(){ // write your code here })(); */
 (function(){
-  // This is the instance of our angular app
-  var app = angular.module("MatrixCalculatorApp", []);
 
-  app.controller("MatrixController", function($scope) {
+  angular.module('MatrixCalculatorApp').controller('MatrixController', ['$scope', '$window', function($scope, $window) {
     // Controller properties
     this.matrixDimension = 3;
     this.matrixRange = 0;
@@ -156,7 +154,7 @@ $(document).ready(function () {
 
      this.initializeMatrix();
     
-  });
+  }]);
 
   /*
     The restrict option is typically set to:
@@ -167,7 +165,7 @@ $(document).ready(function () {
     'M' - only matches comment
   */
 
-  app.directive("operationViewForm", function () {
+  angular.module('MatrixCalculatorApp').directive("operationViewForm", function () {
     return {
       restrict: 'E', // type of directive
       templateUrl:"view/templates/operation-view-form.html",
@@ -178,7 +176,7 @@ $(document).ready(function () {
     };
   });
 
-  app.directive("matrixViewForm", function () {
+  angular.module('MatrixCalculatorApp').directive("matrixViewForm", function () {
     return {
       restrict: 'E', // type of directive
       templateUrl:"view/templates/matrix-view-form.html",
